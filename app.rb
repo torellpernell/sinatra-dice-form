@@ -5,17 +5,19 @@ get("/") do
   erb(:home)
 end
 
-get("/process_roll/:dice/:sides") do
-  @dice = params.fetch("dice")
-  @sides = params.fetch("sides")
+get("/process_roll?") do
+  @num_dice = params.fetch("dice")
+  @num_sides = params.fetch("sides")
   
+ 
   @rolls = []
 
-  @dice.times do
-    die = rand(1..@sides)
+  @num_dice.to_i.times do 
+    die = rand(1..@num_sides.to_i)
 
     @rolls.push(die)
   end
 
+  
   erb(:process_roll)
 end
