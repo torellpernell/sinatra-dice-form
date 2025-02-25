@@ -20,22 +20,13 @@
 <a href="/">Go back home</a>
 
 <ol>
+  <% @rolls.each do |a_roll| %>
     <li>
-      <em>Result:</em> <strong>1</strong>
+      <em>Result:</em> <strong><%= a_roll %></strong>
     </li>
-    <li>
-      <em>Result:</em> <strong>3</strong>
-    </li>
-    <li>
-      <em>Result:</em> <strong>2</strong>
-    </li>
-    <li>
-      <em>Result:</em> <strong>4</strong>
-    </li>
-    <li>
-      <em>Result:</em> <strong>1</strong>
-    </li>
+  <% end %>
 </ol>
+
 
   </body>
 </html>
