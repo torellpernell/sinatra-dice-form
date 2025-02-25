@@ -8,11 +8,14 @@ end
 get("/process_roll/:dice/:sides") do
   @dice = params.fetch("dice")
   @sides = params.fetch("sides")
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
+  
+  @rolls = []
 
-  "
+  @dice.times do
+    die = rand(1..@sides)
+
+    @rolls.push(die)
+  end
 
   erb(:process_roll)
 end
